@@ -134,7 +134,7 @@
     <None Include="Resources\loading_pac.gif" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\OpenFL\deps\OpenCL.Wrapper\deps\OpenCL\src\OpenCL\OpenCL.csproj">
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\OpenFL\deps\OpenCL.Wrapper\deps\OpenCL\src\OpenCL\OpenCL.NET.csproj">
       <Project>{03c67aa2-ced0-43fc-879b-067ef7fcb50a}</Project>
       <Name>OpenCL</Name>
     </ProjectReference>
