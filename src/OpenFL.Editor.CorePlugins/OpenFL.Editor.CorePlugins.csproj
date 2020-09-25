@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{19B0A3FD-9000-46BA-82B9-F7C8EC7D2DEE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OpenFL.Editor.CorePlugins</RootNamespace>
+    <AssemblyName>OpenFL.Editor.CorePlugins</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.7.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.3\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Forms\AboutInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutInfo.Designer.cs">
+      <DependentUpon>AboutInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BufferView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BufferView.Designer.cs">
+      <DependentUpon>BufferView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BuildExceptionViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BuildExceptionViewer.Designer.cs">
+      <DependentUpon>BuildExceptionViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FLArchiveCreatorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FLArchiveCreatorForm.Designer.cs">
+      <DependentUpon>FLArchiveCreatorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LogDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LogDisplayForm.Designer.cs">
+      <DependentUpon>LogDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SettingsDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SettingsDialogForm.Designer.cs">
+      <DependentUpon>SettingsDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Setup\BufferViewPlugin.cs" />
+    <Compile Include="Setup\CLInitializerPlugin.cs" />
+    <Compile Include="Setup\CorePluginSetup.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\AboutInfo.resx">
+      <DependentUpon>AboutInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BufferView.resx">
+      <DependentUpon>BufferView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BuildExceptionViewer.resx">
+      <DependentUpon>BuildExceptionViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FLArchiveCreatorForm.resx">
+      <DependentUpon>FLArchiveCreatorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LogDisplayForm.resx">
+      <DependentUpon>LogDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SettingsDialogForm.resx">
+      <DependentUpon>SettingsDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\loading_pac.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\OpenFL\deps\OpenCL.Wrapper\deps\OpenCL\src\OpenCL\OpenCL.csproj">
+      <Project>{03c67aa2-ced0-43fc-879b-067ef7fcb50a}</Project>
+      <Name>OpenCL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\OpenFL\deps\OpenCL.Wrapper\deps\Utility\src\Utility\Utility.csproj">
+      <Project>{8e452852-76f5-4be0-b8ab-cac3b4eb0a07}</Project>
+      <Name>Utility</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\OpenFL\deps\OpenCL.Wrapper\src\OpenCL.Wrapper\OpenCL.Wrapper.csproj">
+      <Project>{5bb5a827-5815-4d1e-b26b-1e2d100cd2f3}</Project>
+      <Name>OpenCL.Wrapper</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\OpenFL\deps\PluginSystem\src\PluginSystem\PluginSystem.csproj">
+      <Project>{862dce29-6c8f-4be3-bb79-9bbc1ec684c6}</Project>
+      <Name>PluginSystem</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\OpenFL\src\OpenFL\OpenFL.csproj">
+      <Project>{557e18b0-8985-4e93-a3ca-8ec769a8cde5}</Project>
+      <Name>OpenFL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\ThemeEngine\src\ThemeEngine\ThemeEngine.csproj">
+      <Project>{5b9f1aba-8297-4855-b06b-b3c0f2419b35}</Project>
+      <Name>ThemeEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\deps\Utility.WindowsForms\src\Utility.WindowsForms\Utility.WindowsForms.csproj">
+      <Project>{771aa9be-e747-438e-9fa1-f4aa0ad6ddd0}</Project>
+      <Name>Utility.WindowsForms</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\deps\OpenFL.Editor\src\OpenFL.Editor\OpenFL.Editor.csproj">
+      <Project>{0dba7a0d-7701-4db4-b6ae-8c3d5d2abdda}</Project>
+      <Name>OpenFL.Editor</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
