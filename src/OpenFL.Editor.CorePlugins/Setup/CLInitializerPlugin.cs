@@ -38,7 +38,7 @@ namespace OpenFL.Editor.CorePlugins.Setup
             CLAPI instance = CLAPI.GetInstance();
             string path = FLScriptEditor.Settings.KernelPath;
             StartupSequence.loaderForm.SetStatus("Discovering Files in Path: " + path);
-            string[] files = IOManager.GetFiles(path, "*.cl");
+            string[] files = IOManager.DirectoryExists(path) ? IOManager.GetFiles(path, "*.cl") : new string[0];
 
             if (files.Length == 0)
             {
@@ -149,7 +149,7 @@ namespace OpenFL.Editor.CorePlugins.Setup
             BufferCreator creator = BufferCreator.CreateWithBuiltInTypes();
             FLParser parser = new FLParser(iset, creator, new WorkItemRunnerSettings(true, 2));
 
-            StartupSequence.FlContainer= new FLDataContainer(instance, iset, creator, parser);
+            StartupSequence.FlContainer = new FLDataContainer(instance, iset, creator, parser);
         }
 
     }
