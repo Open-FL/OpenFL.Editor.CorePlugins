@@ -24,7 +24,7 @@ namespace OpenFL.Editor.CorePlugins.Setup
     public class CorePluginSetup : APlugin<FLEditorPluginHost>
     {
 
-        public override string Name => "fl-debugger-core-plugins";
+        public override string Name => "fl-editor-core-plugins";
 
         public override bool IsMainPlugin => true;
 

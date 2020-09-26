@@ -26,7 +26,7 @@ namespace OpenFL.Editor.CorePlugins.Setup
     public class CLInitializerPlugin : APlugin<PluginSystemHost>
     {
 
-        public override string Name => "fl-debugger-cl-initializer";
+        public override string Name => "fl-editor-cl-initializer";
 
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
