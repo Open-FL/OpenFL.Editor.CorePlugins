@@ -2,4 +2,5 @@ name: fl-editor-core-plugins
 target: .\src\OpenFL.Editor.CorePlugins\bin\Debug\OpenFL.Editor.CorePlugins.dll
 output: .\docs\latest\fl-editor-core-plugins.zip
 dependency: open-cl-kernel-collection
+origin: https://open-fl.github.io/OpenFL.Editor.CorePlugins/latest/info.txt
 flags: INFO_TO_OUTPUT
