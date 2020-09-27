@@ -1,1 +1,1 @@
-fl-editor-core-plugins|OpenFL.Editor.CorePlugins.dll|https://open-fl.github.io/OpenFL.Editor.CorePlugins/latest/info.txt|0.0.0.10|open-cl-kernel-collection
+fl-editor-core-plugins|OpenFL.Editor.CorePlugins.dll|https://open-fl.github.io/OpenFL.Editor.CorePlugins/latest/info.txt|0.0.0.12|open-cl-kernel-collection
