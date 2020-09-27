@@ -1,4 +1,5 @@
 name: fl-editor-core-plugins
 target: .\src\OpenFL.Editor.CorePlugins\bin\Debug\OpenFL.Editor.CorePlugins.dll
-#output: .\build\fl-editor-core-plugins.zip
+output: .\docs\latest\fl-editor-core-plugins.zip
 dependency: open-cl-kernel-collection
+flags: INFO_TO_OUTPUT
