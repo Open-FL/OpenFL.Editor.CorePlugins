@@ -24,10 +24,6 @@ namespace OpenFL.Editor.CorePlugins.Setup
     public class CorePluginSetup : APlugin<FLEditorPluginHost>
     {
 
-        public override string Name => "fl-editor-core-plugins";
-
-        public override bool IsMainPlugin => true;
-
         private FLArchiveCreatorForm archiveCreatorForm = null;
         private LogDisplayForm logDisplayForm = null;
         private SettingsDialogForm settingsDialogForm = null;

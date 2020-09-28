@@ -11,8 +11,6 @@ namespace OpenFL.Editor.CorePlugins.Setup
     public class BufferViewPlugin : APlugin<FLDebuggerWindow>
     {
 
-        public override string Name => "fl-editor-buffer-view";
-
         private readonly List<BufferView> Views = new List<BufferView>();
 
         public override void OnLoad(PluginAssemblyPointer ptr)
