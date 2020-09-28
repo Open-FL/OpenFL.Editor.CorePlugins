@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Reflection;
 using System.Windows.Forms;
@@ -7,6 +8,7 @@ using System.Windows.Forms;
 using OpenFL.Editor.Forms;
 
 using ThemeEngine;
+using ThemeEngine.Forms;
 
 namespace OpenFL.Editor.CorePlugins.Forms
 {
@@ -100,10 +102,10 @@ namespace OpenFL.Editor.CorePlugins.Forms
 
             FLScriptEditor.Settings.ExperimentalDebuggerMultiThread = cbUseMultithreadDebugger.Checked;
 
-            MessageBox.Show(
+            StyledMessageBox.Show(
                             "The changes will come into effect when restarting the application or reloading the CL Kernels",
                             "Restart Required",
-                            MessageBoxButtons.OK
+                            MessageBoxButtons.OK, SystemIcons.Question
                            );
         }
 
@@ -116,10 +118,10 @@ namespace OpenFL.Editor.CorePlugins.Forms
 
             FLScriptEditor.Settings.ExperimentalKernelLoading = cbExperimentalKernelLoading.Checked;
 
-            MessageBox.Show(
+           StyledMessageBox.Show(
                             "The changes will come into effect when restarting the application or reloading the CL Kernels",
                             "Restart Required",
-                            MessageBoxButtons.OK
+                            MessageBoxButtons.OK, SystemIcons.Question
                            );
         }
 

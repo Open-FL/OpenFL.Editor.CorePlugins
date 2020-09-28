@@ -16,6 +16,8 @@ using PluginSystem.Core.Pointer;
 using PluginSystem.FileSystem;
 using PluginSystem.Utility;
 
+using ThemeEngine.Forms;
+
 using Utility.ProgressFeedback;
 using Utility.WindowsForms.CustomControls;
 
@@ -318,12 +320,12 @@ namespace OpenFL.Editor.CorePlugins.Setup
             if (File.Exists(PluginPaths.PluginListFile))
             {
                 File.Delete(PluginPaths.PluginListFile);
-                if (MessageBox.Show(
+                if (StyledMessageBox.Show(
                                     "Cleared File: " +
                                     PluginPaths.PluginListFile +
                                     "\nFor the Changes to take effect, the application has to be Restarted. Do you want to restart?",
                                     "Restart Required",
-                                    MessageBoxButtons.YesNo
+                                    MessageBoxButtons.YesNo, SystemIcons.Question
                                    ) ==
                     DialogResult.Yes)
                 {

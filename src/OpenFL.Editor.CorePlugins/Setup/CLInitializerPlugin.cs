@@ -17,6 +17,8 @@ using PluginSystem.Core;
 using PluginSystem.Core.Pointer;
 using PluginSystem.Utility;
 
+using ThemeEngine.Forms;
+
 using Utility.Exceptions;
 using Utility.ExtPP.API;
 using Utility.IO.Callbacks;
@@ -40,11 +42,11 @@ namespace OpenFL.Editor.CorePlugins.Setup
 
             if (files.Length == 0)
             {
-                DialogResult res = MessageBox.Show(
+                DialogResult res = StyledMessageBox.Show(
                                                    "No Files found at path: " + path,
                                                    "Error",
                                                    MessageBoxButtons.AbortRetryIgnore,
-                                                   MessageBoxIcon.Error
+                                                   SystemIcons.Error
                                                   );
                 if (res == DialogResult.Retry)
                 {
@@ -121,12 +123,12 @@ namespace OpenFL.Editor.CorePlugins.Setup
             if (throwEx)
             {
                 DialogResult res =
-                    MessageBox.Show(
-                                    "There are errors in one or more OpenCL kernels. Do you want to open the OpenCL Build Excepion Viewer?",
-                                    "OpenCL Build Errors",
-                                    MessageBoxButtons.YesNoCancel,
-                                    MessageBoxIcon.Warning
-                                   );
+                    StyledMessageBox.Show(
+                                          "There are errors in one or more OpenCL kernels. Do you want to open the OpenCL Build Excepion Viewer?",
+                                          "OpenCL Build Errors",
+                                          MessageBoxButtons.YesNoCancel,
+                                          SystemIcons.Warning
+                                         );
                 if (res == DialogResult.Cancel)
                 {
                     StartupSequence.loaderForm.DialogResult = DialogResult.Abort;

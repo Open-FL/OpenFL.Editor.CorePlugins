@@ -10,6 +10,7 @@ using OpenCL.Wrapper;
 using OpenFL.Core.Buffers;
 
 using ThemeEngine;
+using ThemeEngine.Forms;
 
 using Utility.WindowsForms.CustomControls;
 
@@ -134,11 +135,11 @@ namespace OpenFL.Editor.CorePlugins.Forms
 
             if (t.IsFaulted)
             {
-                MessageBox.Show(
+                StyledMessageBox.Show(
                                 "Can not show content of a disposed Buffer, form exiting",
                                 "Error",
                                 MessageBoxButtons.OK,
-                                MessageBoxIcon.Error
+                                SystemIcons.Error
                                );
                 Close();
                 return;
