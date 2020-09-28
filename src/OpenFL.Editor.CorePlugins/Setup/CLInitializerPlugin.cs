@@ -43,8 +43,8 @@ namespace OpenFL.Editor.CorePlugins.Setup
             if (files.Length == 0)
             {
                 DialogResult res = StyledMessageBox.Show(
+                                                         "Error",
                                                    "No Files found at path: " + path,
-                                                   "Error",
                                                    MessageBoxButtons.AbortRetryIgnore,
                                                    SystemIcons.Error
                                                   );
@@ -123,9 +123,9 @@ namespace OpenFL.Editor.CorePlugins.Setup
             if (throwEx)
             {
                 DialogResult res =
-                    StyledMessageBox.Show(
+                    StyledMessageBox.Show("OpenCL Build Errors",
                                           "There are errors in one or more OpenCL kernels. Do you want to open the OpenCL Build Excepion Viewer?",
-                                          "OpenCL Build Errors",
+                                          
                                           MessageBoxButtons.YesNoCancel,
                                           SystemIcons.Warning
                                          );

@@ -119,8 +119,8 @@ namespace OpenFL.Editor.CorePlugins.Forms
             FLScriptEditor.Settings.ExperimentalKernelLoading = cbExperimentalKernelLoading.Checked;
 
            StyledMessageBox.Show(
+                                 "Error",
                             "The changes will come into effect when restarting the application or reloading the CL Kernels",
-                            "Restart Required",
                             MessageBoxButtons.OK, SystemIcons.Question
                            );
         }

@@ -320,11 +320,11 @@ namespace OpenFL.Editor.CorePlugins.Setup
             if (File.Exists(PluginPaths.PluginListFile))
             {
                 File.Delete(PluginPaths.PluginListFile);
-                if (StyledMessageBox.Show(
+                if (StyledMessageBox.Show("Restart Required",
                                     "Cleared File: " +
                                     PluginPaths.PluginListFile +
                                     "\nFor the Changes to take effect, the application has to be Restarted. Do you want to restart?",
-                                    "Restart Required",
+                                    
                                     MessageBoxButtons.YesNo, SystemIcons.Question
                                    ) ==
                     DialogResult.Yes)
