@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Threading.Tasks;
@@ -34,7 +35,7 @@ namespace OpenFL.Editor.CorePlugins.Forms
         {
             Instance = instance;
             InitializeComponent();
-            
+
             if (buffer.Depth == 1)
             {
                 nudFrame.Enabled = false;
@@ -135,12 +136,12 @@ namespace OpenFL.Editor.CorePlugins.Forms
 
             if (t.IsFaulted)
             {
-                StyledMessageBox.Show("Error",
-                                "Can not show content of a disposed Buffer, form exiting",
-                                
-                                MessageBoxButtons.OK,
-                                SystemIcons.Error
-                               );
+                StyledMessageBox.Show(
+                                      "Error",
+                                      "Can not show content of a disposed Buffer, form exiting",
+                                      MessageBoxButtons.OK,
+                                      SystemIcons.Error
+                                     );
                 Close();
                 return;
             }
@@ -157,7 +158,7 @@ namespace OpenFL.Editor.CorePlugins.Forms
             Application.DoEvents();
         }
 
-        private void BufferView_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void BufferView_Closing(object sender, CancelEventArgs e)
         {
             OpenForms.Remove(this);
         }

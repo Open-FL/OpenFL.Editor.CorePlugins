@@ -26,7 +26,7 @@ namespace OpenFL.Editor.CorePlugins.Forms
             Closing += (sender, args) => FLScriptEditor.Settings.Save(FLEditorSettingsPath);
 
             StyleManager.RegisterControls(this);
-            
+
 
             NoSet = true;
             cbLogParserStacktrace.Checked = FLScriptEditor.Settings.LogParserStacktrace;
@@ -103,10 +103,11 @@ namespace OpenFL.Editor.CorePlugins.Forms
             FLScriptEditor.Settings.ExperimentalDebuggerMultiThread = cbUseMultithreadDebugger.Checked;
 
             StyledMessageBox.Show(
-                            "The changes will come into effect when restarting the application or reloading the CL Kernels",
-                            "Restart Required",
-                            MessageBoxButtons.OK, SystemIcons.Question
-                           );
+                                  "The changes will come into effect when restarting the application or reloading the CL Kernels",
+                                  "Restart Required",
+                                  MessageBoxButtons.OK,
+                                  SystemIcons.Question
+                                 );
         }
 
         private void cbExperimentalKernelLoading_CheckedChanged(object sender, EventArgs e)
@@ -118,11 +119,12 @@ namespace OpenFL.Editor.CorePlugins.Forms
 
             FLScriptEditor.Settings.ExperimentalKernelLoading = cbExperimentalKernelLoading.Checked;
 
-           StyledMessageBox.Show(
-                                 "Error",
-                            "The changes will come into effect when restarting the application or reloading the CL Kernels",
-                            MessageBoxButtons.OK, SystemIcons.Question
-                           );
+            StyledMessageBox.Show(
+                                  "Error",
+                                  "The changes will come into effect when restarting the application or reloading the CL Kernels",
+                                  MessageBoxButtons.OK,
+                                  SystemIcons.Question
+                                 );
         }
 
         private void cbLogParserStacktrace_CheckedChanged(object sender, EventArgs e)
@@ -144,5 +146,6 @@ namespace OpenFL.Editor.CorePlugins.Forms
 
             FLScriptEditor.Settings.LogProgramStacktrace = cbLogPreviewStacktrace.Checked;
         }
+
     }
 }

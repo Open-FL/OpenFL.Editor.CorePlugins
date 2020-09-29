@@ -44,10 +44,10 @@ namespace OpenFL.Editor.CorePlugins.Setup
             {
                 DialogResult res = StyledMessageBox.Show(
                                                          "Error",
-                                                   "No Files found at path: " + path,
-                                                   MessageBoxButtons.AbortRetryIgnore,
-                                                   SystemIcons.Error
-                                                  );
+                                                         "No Files found at path: " + path,
+                                                         MessageBoxButtons.AbortRetryIgnore,
+                                                         SystemIcons.Error
+                                                        );
                 if (res == DialogResult.Retry)
                 {
                     Initialize();
@@ -96,7 +96,9 @@ namespace OpenFL.Editor.CorePlugins.Setup
             {
                 foreach (string file in files)
                 {
-                    StartupSequence.loaderForm.SetStatus($"[{fileCount}/{files.Length}]Loading: {file} ({kernelCount})");
+                    StartupSequence.loaderForm.SetStatus(
+                                                         $"[{fileCount}/{files.Length}]Loading: {file} ({kernelCount})"
+                                                        );
                     try
                     {
                         CLProgram prog = dataBase.AddProgram(instance, file, false, out CLProgramBuildResult res);
@@ -123,9 +125,9 @@ namespace OpenFL.Editor.CorePlugins.Setup
             if (throwEx)
             {
                 DialogResult res =
-                    StyledMessageBox.Show("OpenCL Build Errors",
+                    StyledMessageBox.Show(
+                                          "OpenCL Build Errors",
                                           "There are errors in one or more OpenCL kernels. Do you want to open the OpenCL Build Excepion Viewer?",
-                                          
                                           MessageBoxButtons.YesNoCancel,
                                           SystemIcons.Warning
                                          );

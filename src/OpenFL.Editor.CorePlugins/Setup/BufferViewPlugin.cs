@@ -40,7 +40,6 @@ namespace OpenFL.Editor.CorePlugins.Setup
                                                     Views.Add(bvv);
                                                     bvv.Show();
                                                 };
-
         }
 
     }

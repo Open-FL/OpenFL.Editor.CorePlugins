@@ -13,13 +13,12 @@ namespace OpenFL.Editor.CorePlugins.Forms
 {
     public partial class AboutInfo : Form
     {
-        
+
         public AboutInfo()
         {
             InitializeComponent();
 
             StyleManager.RegisterControls(this);
-            
 
 
             lblVersionInfo.Text = "Debugger Version: " + Assembly.GetExecutingAssembly().GetName().Version;
@@ -75,6 +74,7 @@ namespace OpenFL.Editor.CorePlugins.Forms
         private void BrowserNavigate(WebBrowserNavigatingEventArgs e, bool directInstall, string projectName)
         {
             e.Cancel = true;
+
             //if (e.Url.AbsolutePath.EndsWith(".zip"))
             //{
             //    if (directInstall && UpdateChecker.UpdaterPresent)

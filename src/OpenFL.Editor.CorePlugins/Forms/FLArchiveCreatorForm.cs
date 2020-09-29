@@ -25,7 +25,7 @@ namespace OpenFL.Editor.CorePlugins.Forms
 
 
             StyleManager.RegisterControls(this);
-            
+
             Icon = FLEditorPluginHost.FLEditorIcon;
         }
 

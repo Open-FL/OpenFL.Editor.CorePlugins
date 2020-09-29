@@ -1,4 +1,5 @@
-﻿using System.Drawing;
+﻿using System.ComponentModel;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 
@@ -26,14 +27,15 @@ namespace OpenFL.Editor.CorePlugins.Setup
     public class CorePluginSetup : APlugin<FLEditorPluginHost>
     {
 
-        private FLArchiveCreatorForm archiveCreatorForm = null;
-        private LogDisplayForm logDisplayForm = null;
-        private SettingsDialogForm settingsDialogForm = null;
-        private AboutInfo aboutForm = null;
-        private ListPluginsForm pluginList = null;
-        private SaveFileDialog sfdScript;
+        private AboutInfo aboutForm;
+
+        private FLArchiveCreatorForm archiveCreatorForm;
 
         private bool HasDefaults = false;
+        private LogDisplayForm logDisplayForm;
+        private ListPluginsForm pluginList = null;
+        private SettingsDialogForm settingsDialogForm;
+        private SaveFileDialog sfdScript;
 
         public override void OnLoad(PluginAssemblyPointer ptr)
         {
@@ -56,6 +58,20 @@ namespace OpenFL.Editor.CorePlugins.Setup
                 PluginHost.Editor.Path = FLScriptEditor.TempEditorContentPath;
             }
         }
+
+        #region Settings Dialog
+
+        [ToolbarItem("File/Settings...", 2)]
+        private void OnShowSettings()
+        {
+            if (settingsDialogForm == null || settingsDialogForm.IsDisposed)
+            {
+                settingsDialogForm = new SettingsDialogForm();
+                settingsDialogForm.Show();
+            }
+        }
+
+        #endregion
 
         #region Toolbar Items
 
@@ -87,15 +103,11 @@ namespace OpenFL.Editor.CorePlugins.Setup
         [ToolbarItem("About", int.MaxValue)]
         private void AboutDummy()
         {
-
         }
 
         #endregion
 
         #region FL Package Creator
-
-
-
 
         [ToolbarItem("FL/Create Package", 1)]
         private void OnCreatePackage()
@@ -149,8 +161,6 @@ namespace OpenFL.Editor.CorePlugins.Setup
                                      );
         }
 
-
-
         #endregion
 
         #region Log Display
@@ -167,30 +177,14 @@ namespace OpenFL.Editor.CorePlugins.Setup
             }
         }
 
-        private void LogDisplayForm_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        private void LogDisplayForm_Closing(object sender, CancelEventArgs e)
         {
             PluginHost.Editor.RemoveLogger(logDisplayForm.Append);
         }
 
         #endregion
 
-        #region Settings Dialog
-
-
-        [ToolbarItem("File/Settings...", 2)]
-        private void OnShowSettings()
-        {
-            if (settingsDialogForm == null || settingsDialogForm.IsDisposed)
-            {
-                settingsDialogForm = new SettingsDialogForm();
-                settingsDialogForm.Show();
-            }
-        }
-
-        #endregion
-
         #region Default Toolbar Entries
-
 
         [ToolbarItem("About/Info")]
         private void OnShowAbout()
@@ -255,7 +249,7 @@ namespace OpenFL.Editor.CorePlugins.Setup
                     {
                         return;
                     }
-                    
+
                     FLBuffer input = PluginHost.Editor.FLContainer.CreateBuffer(
                                                                                 FLScriptEditor.Settings.ResX,
                                                                                 FLScriptEditor.Settings.ResY,
@@ -312,7 +306,7 @@ namespace OpenFL.Editor.CorePlugins.Setup
         {
             PluginHost.Editor.PanelToolbar.Visible = false;
         }
-        
+
 
         [ToolbarItem("Plugins/Remove Packages from Startup List", 1)]
         private void OnRemovePluginsFromStartup()
@@ -320,13 +314,14 @@ namespace OpenFL.Editor.CorePlugins.Setup
             if (File.Exists(PluginPaths.PluginListFile))
             {
                 File.Delete(PluginPaths.PluginListFile);
-                if (StyledMessageBox.Show("Restart Required",
-                                    "Cleared File: " +
-                                    PluginPaths.PluginListFile +
-                                    "\nFor the Changes to take effect, the application has to be Restarted. Do you want to restart?",
-                                    
-                                    MessageBoxButtons.YesNo, SystemIcons.Question
-                                   ) ==
+                if (StyledMessageBox.Show(
+                                          "Restart Required",
+                                          "Cleared File: " +
+                                          PluginPaths.PluginListFile +
+                                          "\nFor the Changes to take effect, the application has to be Restarted. Do you want to restart?",
+                                          MessageBoxButtons.YesNo,
+                                          SystemIcons.Question
+                                         ) ==
                     DialogResult.Yes)
                 {
                     PluginHost.Editor.Close();
@@ -336,5 +331,6 @@ namespace OpenFL.Editor.CorePlugins.Setup
         }
 
         #endregion
+
     }
 }

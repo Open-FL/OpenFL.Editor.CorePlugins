@@ -42,7 +42,11 @@ namespace OpenFL.Editor.CorePlugins.Forms
 
         public void Append(string str)
         {
-            if (IsDisposed) return;
+            if (IsDisposed)
+            {
+                return;
+            }
+
             logOut.Append(str);
             allowLogEdit = true;
             rtbLogOut.AppendText(str);
