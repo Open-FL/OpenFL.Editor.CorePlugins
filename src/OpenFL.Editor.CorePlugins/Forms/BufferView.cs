@@ -53,8 +53,9 @@ namespace OpenFL.Editor.CorePlugins.Forms
             Text = buffer.DefinedBufferName + $"[{buffer.Buffer}]";
 
 
-            comboBox1.Items.AddRange(Enum.GetNames(typeof(InterpolationMode)));
-            comboBox1.SelectedIndex = 0;
+            cbImageFilterMode.Items.AddRange(Enum.GetNames(typeof(InterpolationMode)));
+            cbImageFilterMode.Items.Remove(InterpolationMode.Invalid.ToString());
+            cbImageFilterMode.SelectedIndex = 0;
 
             StyleManager.RegisterControls(this);
 
@@ -178,7 +179,7 @@ namespace OpenFL.Editor.CorePlugins.Forms
             pbBufferContent.InterpolationMode =
                 (InterpolationMode) Enum.Parse(
                                                typeof(InterpolationMode),
-                                               comboBox1.Items[comboBox1.SelectedIndex].ToString()
+                                               cbImageFilterMode.Items[cbImageFilterMode.SelectedIndex].ToString()
                                               );
             pbBufferContent.Invalidate();
         }

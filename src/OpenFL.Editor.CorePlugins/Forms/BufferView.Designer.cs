@@ -33,7 +33,7 @@
             this.nudFrame = new System.Windows.Forms.NumericUpDown();
             this.btnExport = new System.Windows.Forms.Button();
             this.pbIdle = new System.Windows.Forms.PictureBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbImageFilterMode = new System.Windows.Forms.ComboBox();
             this.btnReload = new System.Windows.Forms.Button();
             this.pbLoading = new System.Windows.Forms.PictureBox();
             this.panelImage = new System.Windows.Forms.Panel();
@@ -50,7 +50,7 @@
             this.panelSide.Controls.Add(this.nudFrame);
             this.panelSide.Controls.Add(this.btnExport);
             this.panelSide.Controls.Add(this.pbIdle);
-            this.panelSide.Controls.Add(this.comboBox1);
+            this.panelSide.Controls.Add(this.cbImageFilterMode);
             this.panelSide.Controls.Add(this.btnReload);
             this.panelSide.Controls.Add(this.pbLoading);
             this.panelSide.Dock = System.Windows.Forms.DockStyle.Right;
@@ -88,16 +88,16 @@
             this.pbIdle.TabIndex = 1;
             this.pbIdle.TabStop = false;
             // 
-            // comboBox1
+            // cbImageFilterMode
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(6, 32);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(185, 21);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cbImageFilterMode.BackColor = System.Drawing.SystemColors.Control;
+            this.cbImageFilterMode.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbImageFilterMode.FormattingEnabled = true;
+            this.cbImageFilterMode.Location = new System.Drawing.Point(6, 32);
+            this.cbImageFilterMode.Name = "cbImageFilterMode";
+            this.cbImageFilterMode.Size = new System.Drawing.Size(185, 21);
+            this.cbImageFilterMode.TabIndex = 3;
+            this.cbImageFilterMode.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnReload
             // 
@@ -159,7 +159,7 @@
         private System.Windows.Forms.Panel panelSide;
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Panel panelImage;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbImageFilterMode;
         private System.Windows.Forms.PictureBox pbLoading;
         private System.Windows.Forms.PictureBox pbIdle;
         private System.Windows.Forms.Button btnExport;
