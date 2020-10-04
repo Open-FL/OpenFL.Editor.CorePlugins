@@ -1,6 +1,15 @@
 name: fl-editor-core-plugins
-target: .\src\OpenFL.Editor.CorePlugins\bin\Debug\OpenFL.Editor.CorePlugins.dll
-output: .\docs\latest\fl-editor-core-plugins.zip
-dependency: open-cl-kernel-collection
-origin: https://open-fl.github.io/OpenFL.Editor.CorePlugins/latest/info.txt
+branch: Debug
+project-name: OpenFL.Editor.CorePlugins
 flags: INFO_TO_OUTPUT
+
+#Additional Build Info
+dependency: open-cl-kernel-collection
+
+#Build Info
+solution: .\src\%project-name%.sln
+output: .\docs\latest\%name%.zip
+origin: https://open-fl.github.io/%project-name%/latest/info.txt
+target: %buildout%\%project-name%.dll
+buildout: .\src\%project-name%\bin\%branch%
+buildcmd: msbuild {0} /t:Build /p:Configuration=%branch%
