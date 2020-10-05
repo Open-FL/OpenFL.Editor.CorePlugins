@@ -32,11 +32,11 @@ namespace OpenFL.Editor.CorePlugins.Setup
             PluginHost.OnInternalBufferClick += (program, buffer) =>
                                                 {
                                                     BufferView bvv = new BufferView(
-                                                                                    program.Instance,
-                                                                                    buffer,
-                                                                                    program.Dimensions.x,
-                                                                                    program.Dimensions.y
-                                                                                   );
+                                                         program.Instance,
+                                                         buffer,
+                                                         program.Dimensions.x,
+                                                         program.Dimensions.y
+                                                        );
                                                     Views.Add(bvv);
                                                     bvv.Show();
                                                 };

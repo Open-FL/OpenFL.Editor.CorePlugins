@@ -139,7 +139,8 @@ namespace OpenFL.Editor.CorePlugins.Forms
             {
                 StyledMessageBox.Show(
                                       "Error",
-                                      "Can not show content of a disposed Buffer, form exiting\n" + t.Exception.InnerException.Message,
+                                      "Can not show content of a disposed Buffer, form exiting\n" +
+                                      t.Exception.InnerException.Message,
                                       MessageBoxButtons.OK,
                                       SystemIcons.Error
                                      );
